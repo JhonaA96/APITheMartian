@@ -102,4 +102,5 @@ public class Character {
     public void setActor(Actor actor) {
         this.actor = actor;
     }
+
 }
