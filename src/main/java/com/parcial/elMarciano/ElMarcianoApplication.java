@@ -1,13 +1,13 @@
-package com.parcial.jupiter;
+package com.parcial.elMarciano;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JupiterApplication {
+public class ElMarcianoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JupiterApplication.class, args);
+        SpringApplication.run(ElMarcianoApplication.class, args);
     }
 
 }

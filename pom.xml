@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.parcial</groupId>
-    <artifactId>jupiter</artifactId>
+    <artifactId>ElMarciano</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>jupiter</name>
-    <description>jupiter</description>
+    <name>ElMarciano</name>
+    <description>Parcial relacionado a El Marciano</description>
     <properties>
         <java.version>11</java.version>
     </properties>

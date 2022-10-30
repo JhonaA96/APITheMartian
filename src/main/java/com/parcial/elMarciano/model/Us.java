@@ -1,4 +1,4 @@
-package com.parcial.jupiter.model;
+package com.parcial.elMarciano.model;
 
 import javax.persistence.*;
 
