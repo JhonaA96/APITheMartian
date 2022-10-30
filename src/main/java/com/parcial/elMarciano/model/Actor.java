@@ -32,11 +32,12 @@ public class Actor {
     @Column(name = "movies")
     private String movies;
 
-    @Column(name = "picture")
-    private File picture;
+    @JoinColumn(name = "idActorPicture", referencedColumnName = "Id")
+    @OneToOne(fetch = FetchType.LAZY)
+    private ActorPicture picture;
 
     @Column(name = "web", nullable = true)
-    private URL web;
+    private String web;
 
     @Column(name = "instagram")
     private String insta;
@@ -49,7 +50,7 @@ public class Actor {
         this.id = id;
     }
 
-    public Actor(String firstName, String lastName, Date bornDate, String awards, String movies, File picture, URL web, String insta) {
+    public Actor(String firstName, String lastName, Date bornDate, String awards, String movies, ActorPicture picture, String web, String insta) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bornDate = bornDate;
@@ -108,19 +109,19 @@ public class Actor {
         this.movies = movies;
     }
 
-    public File getPicture() {
+    public ActorPicture getPicture() {
         return picture;
     }
 
-    public void setPicture(File picture) {
+    public void setPicture(ActorPicture picture) {
         this.picture = picture;
     }
 
-    public URL getWeb() {
+    public String getWeb() {
         return web;
     }
 
-    public void setWeb(URL web) {
+    public void setWeb(String web) {
         this.web = web;
     }
 
@@ -128,7 +129,7 @@ public class Actor {
         return insta;
     }
 
-    public void setInsta(String ig) {
-        this.insta = ig;
+    public void setInsta(String insta) {
+        this.insta = insta;
     }
 }
