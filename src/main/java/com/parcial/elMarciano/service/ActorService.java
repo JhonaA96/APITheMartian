@@ -12,4 +12,6 @@ public interface ActorService {
     Iterable<Actor> showAllActor();
     Optional<Actor> showActor(Long id);
 
+    void showAges();
+
 }

@@ -43,4 +43,9 @@ public class ActorController {
         }
         return ResponseEntity.ok(oActor);
     }
+
+    @GetMapping("/ages")
+    public void showAges(){
+        actorService.showAges();
+    }
 }
