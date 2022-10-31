@@ -29,7 +29,6 @@ public class ActorServiceImpl implements ActorService {
 
     @Override
     public void showAges(){
-
         List<Actor> actors = actorDao.findAll();
         Calendar calendar = new GregorianCalendar();
 
