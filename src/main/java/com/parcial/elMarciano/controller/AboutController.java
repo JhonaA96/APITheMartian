@@ -3,6 +3,7 @@ package com.parcial.elMarciano.controller;
 import com.parcial.elMarciano.model.AboutUs;
 import com.parcial.elMarciano.service.AboutUsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,12 +20,15 @@ public class AboutController {
     private AboutUsService aboutUsService;
 
     @GetMapping
-    public List<AboutUs> aboutUs(){
+    public ResponseEntity<?> aboutUs(){
 
         List<AboutUs> about = StreamSupport.stream(
                     aboutUsService.getAll()
                     .spliterator(), false)
                 .collect(Collectors.toList());
-        return about;
+        if(about.isEmpty() || about == null)
+            return ResponseEntity.notFound().build();
+
+        return ResponseEntity.ok(about);
     }
 }

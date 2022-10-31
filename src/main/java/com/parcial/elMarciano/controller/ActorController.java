@@ -28,7 +28,7 @@ public class ActorController {
             false
         ).collect(Collectors.toList());
 
-        if(actors.size()==0)
+        if(actors.isEmpty() || actors == null)
             return ResponseEntity.badRequest().build();
 
         return ResponseEntity.ok(actors);
@@ -38,7 +38,7 @@ public class ActorController {
     @ResponseBody
     public ResponseEntity<?> showActor(@PathParam(value="id") Long actorId){
         Optional<Actor> oActor = actorService.showActor(actorId);
-        if(oActor.isPresent()){
+        if(!oActor.isPresent()){
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(oActor);

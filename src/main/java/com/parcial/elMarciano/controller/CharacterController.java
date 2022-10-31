@@ -38,8 +38,8 @@ public class CharacterController{
     public ResponseEntity<?> showCharacter(@PathParam(value ="id") Long characId){
         Optional<Character> character = characterService.showChracter(characId);
 
-        if(!character.isPresent())
-            return ResponseEntity.badRequest().build();
+        if(!character.isPresent() || character == null)
+            return ResponseEntity.notFound().build();
 
         return ResponseEntity.ok(character);
     }
